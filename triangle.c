@@ -164,6 +164,14 @@ int main(int argc, char **argv)
 
     WIILIGHT_Init();
 
+        printf("\x1B[%d;%dH", 3, 0); 
+		printf("\x1b[36;1m"); // Cyan text color
+		printf("IlluMiinate - Light up the room with your Wii's disc drive!\n");
+		printf("===========================================================\n");
+		printf("Made by August Wolf - Press HOME to exit");
+		printf("\x1B[%d;%dH", 8, 0); 
+        printf("Press A to turn on the disc drive light!\n");
+
     while (1)
     {
         u32 pressed = DetectInput(DI_BUTTONS_DOWN);
@@ -186,14 +194,6 @@ int main(int argc, char **argv)
             break;
         }
 
-        resetscreen();
-        printf("\x1B[%d;%dH", 3, 0); 
-		printf("\x1b[36;1m"); // Cyan text color
-		printf("IlluMiinate - Light up the room with your Wii's disc drive!\n");
-		printf("===========================================================\n");
-		printf("Made by August Wolf - Press HOME to exit");
-		printf("\x1B[%d;%dH", 8, 0); 
-        printf("Press A to turn on the disc drive light!\n");
     }
 
     return 0;
